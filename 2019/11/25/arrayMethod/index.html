@@ -17,7 +17,7 @@
 <meta property="og:description" content="Arrar的方法1、 slice(start,end);   —返回选区 从某个已有的数组返回选定的元素     start   必需。规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。 end 可选。规定从何处结束选取。该参数是数组片断结束处的数组下标。如果没有指定该参数，那么切分的数组包含从 start 到数">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/assets/mdImg/arr-title.png">
-<meta property="og:updated_time" content="2019-11-25T10:50:39.500Z">
+<meta property="og:updated_time" content="2019-11-25T10:57:49.803Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用Arrar方法">
 <meta name="twitter:description" content="Arrar的方法1、 slice(start,end);   —返回选区 从某个已有的数组返回选定的元素     start   必需。规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。 end 可选。规定从何处结束选取。该参数是数组片断结束处的数组下标。如果没有指定该参数，那么切分的数组包含从 start 到数">
@@ -181,6 +181,7 @@
 <li>start   必需。规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。</li>
 <li>end 可选。规定从何处结束选取。该参数是数组片断结束处的数组下标。如果没有指定该参数，那么切分的数组包含从 start 到数组结束的所有元素。如果这个参数是负数，那么它规定的是从数组尾部开始算起的元素。</li>
 </ul>
+<a id="more"></a>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> _arr=[<span class="number">6687</span>, <span class="number">8778</span>, <span class="number">5582</span>, <span class="number">2814</span>, <span class="number">328</span>, <span class="number">4655</span>, <span class="number">2336</span>, <span class="number">9769</span>];</span><br><span class="line"><span class="built_in">console</span>.log(_arr.slice(<span class="number">5</span>,<span class="number">6</span>));</span><br><span class="line"><span class="comment">//表示获取一个区间的元素，并返回一个数组。不改变原有的值。</span></span><br><span class="line"><span class="built_in">console</span>.log(_arr[<span class="number">5</span>]);返回第五个</span><br><span class="line"><span class="built_in">console</span>.log(_arr);返回所有</span><br></pre></td></tr></table></figure>
 
 <h4 id="2、-toString-转字符串—返回str"><a href="#2、-toString-转字符串—返回str" class="headerlink" title="2、 toString(); 转字符串—返回str"></a>2、 toString(); 转字符串—返回str</h4><blockquote>
