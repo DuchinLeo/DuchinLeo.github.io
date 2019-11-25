@@ -16,6 +16,7 @@ tags:
 var str = 'abcdefg';
 var indexC = str.charAt(2) // 'c'
 ```
+<!-- more -->
 
 ##### charCodeAt()
 
