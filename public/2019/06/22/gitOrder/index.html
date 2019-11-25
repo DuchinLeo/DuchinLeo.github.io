@@ -6,25 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Git 常用命令 | 邂逅幸运的博客</title>
+  <title>Git 常用命令 | 大约在冬季</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1、创建本地仓库到连接远程0、安装 git hub 后初始化。全局设置：先要设置提交的用户名和邮箱，不设置则无法提交代码。 12git config --global user.name 名字     # 叫啥名字git config --global user.email 邮箱     # 怎么联系你">
-<meta name="keywords" content="工具,方法">
+<meta name="keywords" content="方法,工具">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git 常用命令">
 <meta property="og:url" content="http://yoursite.com/2019/06/22/gitOrder/index.html">
-<meta property="og:site_name" content="邂逅幸运的博客">
+<meta property="og:site_name" content="大约在冬季">
 <meta property="og:description" content="1、创建本地仓库到连接远程0、安装 git hub 后初始化。全局设置：先要设置提交的用户名和邮箱，不设置则无法提交代码。 12git config --global user.name 名字     # 叫啥名字git config --global user.email 邮箱     # 怎么联系你">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/assets/mdImg/01-gitms03.jpeg">
 <meta property="og:image" content="http://yoursite.com/assets/mdImg/1-gitsm02.png">
-<meta property="og:updated_time" content="2019-06-22T08:55:31.772Z">
+<meta property="og:updated_time" content="2019-11-25T09:23:53.188Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 常用命令">
 <meta name="twitter:description" content="1、创建本地仓库到连接远程0、安装 git hub 后初始化。全局设置：先要设置提交的用户名和邮箱，不设置则无法提交代码。 12git config --global user.name 名字     # 叫啥名字git config --global user.email 邮箱     # 怎么联系你">
 <meta name="twitter:image" content="http://yoursite.com/assets/mdImg/01-gitms03.jpeg">
   
-    <link rel="alternative" href="/atom.xml" title="邂逅幸运的博客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="大约在冬季" type="application/atom+xml">
   
   
     <link rel="icon" href="/assets/blogImg/d.ico">
@@ -418,6 +418,11 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --tags</span><br></pre></td></tr></table></figure>
 
 <h4 id="4、数据合并、查看"><a href="#4、数据合并、查看" class="headerlink" title="4、数据合并、查看"></a>4、数据合并、查看</h4><ul>
+<li>在git中提交后，如果想修改刚刚提交的代码，做一次更完美的commit，可以这样：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">（<span class="number">1</span>）git reset commitId，(注：不要带--hard)到上个版本</span><br><span class="line"></span><br><span class="line">（<span class="number">2</span>）git stash，暂存修改</span><br><span class="line">（<span class="number">3</span>）git push --force, 强制push,远程的最新的一次commit被删除</span><br><span class="line">（<span class="number">4</span>）git stash pop，释放暂存的修改，开始修改代码</span><br><span class="line">（<span class="number">5</span>）git add . -&gt; git commit -m <span class="string">"massage"</span> -&gt; git push</span><br></pre></td></tr></table></figure>
+
+<ul>
 <li>修改本地远程仓库地址：</li>
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin url   # 设置本地的远程仓库地址</span><br><span class="line">git remote rm origin    # 移除本地远程仓库地址</span><br></pre></td></tr></table></figure>
@@ -425,7 +430,7 @@
 <ul>
 <li>从远程服务器获取内容:</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull orgin master 拉取远程仓库代码并合并</span><br><span class="line">git fetch orgin master 拉取远程仓库代码不会合并，需要执行git merge origin/merge进行合并</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、将远程指定分支 拉取到 本地指定分支上：</span><br><span class="line">git pull &lt;远程仓库名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</span><br><span class="line"></span><br><span class="line">常用：</span><br><span class="line">2、将远程指定分支 拉取到 本地当前分支上：</span><br><span class="line">git pull &lt;远程仓库名&gt; &lt;远程分支名&gt;</span><br><span class="line">git pull origin master</span><br><span class="line">把最新的master代码直接拉取到当前的的分支上，比较冲突</span><br><span class="line"></span><br><span class="line">3、将与本地当前分支同名的远程分支 拉取到 本地当前分支上</span><br><span class="line">git pull &lt;远程仓库名&gt;</span><br><span class="line"></span><br><span class="line">git fetch orgin master 拉取远程仓库代码不会合并，需要执行git merge origin/merge进行合并</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>远程代码强制合并本地代码：</li>
@@ -445,10 +450,12 @@
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.gitignore 忽略文件 内容要忽略推送的.文件名 *.jpg node_modules/</span><br></pre></td></tr></table></figure>
 
+<h3 id="git-config"><a href="#git-config" class="headerlink" title="git config"></a>git config</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置大小写是否忽略---默认是true</span></span><br><span class="line">git config core.ignorecase <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h3><ul>
 <li><a href="https://www.jianshu.com/p/f92ed1ca8120" target="_blank" rel="noopener">Git常用命令–了解这些就够了</a></li>
 </ul>
-
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 更新2019/11/25</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -482,11 +489,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">方法</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">方法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
         		</li>
       		
 		</ul>
@@ -554,6 +561,20 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2019/11/25/arrayMethod/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          常用Arrar方法
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -575,7 +596,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、创建本地仓库到连接远程"><span class="toc-number">1.</span> <span class="toc-text">1、创建本地仓库到连接远程</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#创建-SSH-密钥"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">创建 SSH 密钥</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、更新远程覆盖本地"><span class="toc-number">2.</span> <span class="toc-text">2、更新远程覆盖本地</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、切换版本"><span class="toc-number">3.</span> <span class="toc-text">3、切换版本</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#回退版本流程"><span class="toc-number">3.0.1.</span> <span class="toc-text">回退版本流程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、解决冲突"><span class="toc-number">4.</span> <span class="toc-text">4、解决冲突</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、分类操作详解"><span class="toc-number"></span> <span class="toc-text">二、分类操作详解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、add-操作"><span class="toc-number">0.1.</span> <span class="toc-text">1、add 操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、分支-branch-操作"><span class="toc-number">0.2.</span> <span class="toc-text">2、分支(branch)操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、标签-tag-操作"><span class="toc-number">0.3.</span> <span class="toc-text">3、标签(tag)操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、数据合并、查看"><span class="toc-number">0.4.</span> <span class="toc-text">4、数据合并、查看</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#特殊处理"><span class="toc-number">0.5.</span> <span class="toc-text">特殊处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考博客"><span class="toc-number">1.</span> <span class="toc-text">参考博客</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、创建本地仓库到连接远程"><span class="toc-number">1.</span> <span class="toc-text">1、创建本地仓库到连接远程</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#创建-SSH-密钥"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">创建 SSH 密钥</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、更新远程覆盖本地"><span class="toc-number">2.</span> <span class="toc-text">2、更新远程覆盖本地</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、切换版本"><span class="toc-number">3.</span> <span class="toc-text">3、切换版本</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#回退版本流程"><span class="toc-number">3.0.1.</span> <span class="toc-text">回退版本流程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、解决冲突"><span class="toc-number">4.</span> <span class="toc-text">4、解决冲突</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、分类操作详解"><span class="toc-number"></span> <span class="toc-text">二、分类操作详解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、add-操作"><span class="toc-number">0.1.</span> <span class="toc-text">1、add 操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、分支-branch-操作"><span class="toc-number">0.2.</span> <span class="toc-text">2、分支(branch)操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、标签-tag-操作"><span class="toc-number">0.3.</span> <span class="toc-text">3、标签(tag)操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、数据合并、查看"><span class="toc-number">0.4.</span> <span class="toc-text">4、数据合并、查看</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#特殊处理"><span class="toc-number">0.5.</span> <span class="toc-text">特殊处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-config"><span class="toc-number">1.</span> <span class="toc-text">git config</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考博客"><span class="toc-number">2.</span> <span class="toc-text">参考博客</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -687,11 +708,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color1">Array</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">方法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
             
             <div class="clearfix"></div>

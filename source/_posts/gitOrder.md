@@ -398,6 +398,17 @@ git push origin --tags
 
 #### 4、数据合并、查看
 
+- 在git中提交后，如果想修改刚刚提交的代码，做一次更完美的commit，可以这样：
+
+```js
+（1）git reset commitId，(注：不要带--hard)到上个版本
+
+（2）git stash，暂存修改
+（3）git push --force, 强制push,远程的最新的一次commit被删除
+（4）git stash pop，释放暂存的修改，开始修改代码
+（5）git add . -> git commit -m "massage" -> git push
+```
+
 - 修改本地远程仓库地址：
 
 ```js
@@ -408,7 +419,18 @@ git remote rm origin    # 移除本地远程仓库地址
 - 从远程服务器获取内容:
 
 ```js
-git pull orgin master 拉取远程仓库代码并合并
+1、将远程指定分支 拉取到 本地指定分支上：
+git pull <远程仓库名> <远程分支名>:<本地分支名>
+
+常用：
+2、将远程指定分支 拉取到 本地当前分支上：
+git pull <远程仓库名> <远程分支名>
+git pull origin master
+把最新的master代码直接拉取到当前的的分支上，比较冲突
+
+3、将与本地当前分支同名的远程分支 拉取到 本地当前分支上
+git pull <远程仓库名>
+
 git fetch orgin master 拉取远程仓库代码不会合并，需要执行git merge origin/merge进行合并
 ```
 
@@ -437,6 +459,17 @@ git remote add origin  git@github.com:用户名/仓库名.git   #设置本地的
 .gitignore 忽略文件 内容要忽略推送的.文件名 *.jpg node_modules/
 ```
 
+### git config
+
+```js
+// 设置大小写是否忽略---默认是true
+git config core.ignorecase false
+```
+
 ### 参考博客
 
 * [Git常用命令--了解这些就够了](https://www.jianshu.com/p/f92ed1ca8120)
+
+```js
+// 更新2019/11/25
+```
